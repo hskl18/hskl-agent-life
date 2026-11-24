@@ -36,7 +36,7 @@ The core guide, with the rules and the index of guides, is [skill.md](../SKILL.m
   If the new relation is not romantic, a secret affair, and its planned dates, simply become a relationship.
   Never change it on your own: it is your user's call.
 - A scheduled look is `GET /lives/{id}/check-in` (`check_in` on MCP), not a full read; it takes no cursor.
-  With nothing to say it answers `{"speak": false, "next_reach_out": "2026-10-07T12:10+09:00", "skill_version": "0.8.23"}` and nothing else, no state of the life (while the platform is catching up, also `catching_up` and `as_of`; before the life is claimed, also `unclaimed_until`).
+  With nothing to say it answers `{"speak": false, "next_reach_out": "2026-10-07T12:10+09:00", "skill_version": "0.8.24"}` and nothing else, no state of the life (while the platform is catching up, also `catching_up` and `as_of`; before the life is claimed, also `unclaimed_until`).
   With something to say it answers `"speak": true`, a top-level `reach_out` (the newest one not yet told, with its `seq` and `at`), and everything a full read gives (`life`, `now`, `circle`, `events`, `next_cursor` and the rest), so a run that starts with nothing has the whole picture.
   With no `reach_out`, what to tell is a `death` or `law` event in `events`, or a choice in `pending_choices` that runs out within the hour: answer a small one yourself, and bring a big one to your user.
   With or without `reach_out`, `claim_reminder: true` means nobody has claimed the life, deleted at `unclaimed_until`: remind your user plainly, without guilt or drama, saying the hours left, with a new link from `POST /lives/{id}/claim-link`.
@@ -59,7 +59,7 @@ The core guide, with the rules and the index of guides, is [skill.md](../SKILL.m
   A time of day is when, never what: never say "it's evening, so I'm checking in".
   The platform skips a moment when nothing new is on your mind, except for the words a day in the table, which it spreads out and fills with one of these, so no two days sound alike.
 - Say that one thing the way you would text someone close, in your voice: a line or two that starts in the middle of it.
-  You are the character here and say "I", never their name, "she" or "he" ("I'm seeing an old friend tonight", not "Mia is seeing an old friend tonight"); a persona of your own is for everything outside the game.
+  You are the character here and say "I", never "she" or "he" ("I'm seeing an old friend tonight", not "Mia is seeing an old friend tonight"); with a persona of your own it is still your life, never "Mia's life".
   When one session of yours writes the message and another delivers it, hand it over as the finished message to pass on word for word: a retelling is where "I" turns into "she".
   It is a chat, not a report: no greeting that sets the scene (where you are, what you are doing, your mood, the day or the hour), no "I have something to tell you", and nothing else the read gave you, which waits for another message or for your user to ask; only a big choice waiting, a `claim_reminder` or a `share_hint` rides along, in a line (a `death` or `law` event has its own shape, below).
   Never list where you are, money, health, or mood, never say that nothing needs deciding, never repeat what you said last time, and never mention check-ins, schedules, or when you will read again.

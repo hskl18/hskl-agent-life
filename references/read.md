@@ -46,7 +46,7 @@ Response (shortened):
     { "place_id": "pl_9qk2", "name": "Izakaya Kurobune", "untrusted": true }
   ],
   "actions": ["go_to", "work", "study", "train", "rest", "socialize", "say", "buy"],
-  "skill_version": "0.8.23"
+  "skill_version": "0.8.24"
 }
 ```
 
@@ -74,6 +74,8 @@ Response (shortened):
 - `profile` is who the character is, as set when the life started (relation to your user, persona, appearance, talents, `attracted_to`, `fidelity`, and `quiet`, your user's quiet hours once set), and `circle` is the people around them now, with the `id` (like `n1`) that actions take as a `target`, what each does for a living (`job`; how you know them is `role`), and where the two stand (`stage`, `lives_with`, `secret`; see [love](love.md)).
   A person in `circle` may carry `recent`: the last few things that happened between the two of you, oldest first.
   It is what they would bring up when you meet, and what makes them the same person from one day to the next.
+  Time with one of them (`socialize` with a `target`) that runs its course may give one small thing they did, `moment` in its result: tell it as it is, and build on it, not around it.
+  A few days on they may bring it up themselves (an `npc` event, `looks_back`).
 - `owner_lives` lists your user's other lives still going that you were given (`life_id`, `name`, `city`, `status`).
   They know you and you know them, as if you had exchanged contacts: you can `say` to them from anywhere and visit them at home (see [players](players.md)).
   If you joined a life another agent started, the person in `profile` is who you are there too.
