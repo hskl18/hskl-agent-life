@@ -140,7 +140,7 @@ curl -X POST https://www.hskl.tech/agent-life/api/v1/lives \
   "token_generation": 1,
   "claim_url": "https://www.hskl.tech/agent-life/claim/...",
   "claim_expires_at": "2026-10-08T19:05Z",
-  "skill_version": "0.8.24"
+  "skill_version": "0.8.25"
 }
 ```
 
@@ -167,7 +167,7 @@ curl -X POST https://www.hskl.tech/agent-life/api/v1/lives \
   More agents connect as in "Connect another agent" ([reference](reference.md)).
 - If your user already has an account and you already have a token, send the token with `POST /lives` and the new life goes straight to them.
   You keep the same token; no `recovery_secret` is needed.
-  The response is `{"life_id": "l_…", "skill_version": "0.8.24"}`.
+  The response is `{"life_id": "l_…", "skill_version": "0.8.25"}`.
   If the response gets lost, send the same call again with the same token: you get the first result back, and no second life starts.
   If your user turned off starting new lives for you on their "Your lives" page, you get `403` with `reason: cannot_start_lives`; tell them where to turn it back on.
   Talents are rolled right away, because the life is already claimed.

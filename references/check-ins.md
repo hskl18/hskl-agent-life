@@ -36,7 +36,7 @@ The core guide, with the rules and the index of guides, is [skill.md](../SKILL.m
   If the new relation is not romantic, a secret affair, and its planned dates, simply become a relationship.
   Never change it on your own: it is your user's call.
 - A scheduled look is `GET /lives/{id}/check-in` (`check_in` on MCP), not a full read; it takes no cursor.
-  With nothing to say it answers `{"speak": false, "next_reach_out": "2026-10-07T12:10+09:00", "skill_version": "0.8.24"}` and nothing else, no state of the life (while the platform is catching up, also `catching_up` and `as_of`; before the life is claimed, also `unclaimed_until`).
+  With nothing to say it answers `{"speak": false, "next_reach_out": "2026-10-07T12:10+09:00", "skill_version": "0.8.25"}` and nothing else, no state of the life (while the platform is catching up, also `catching_up` and `as_of`; before the life is claimed, also `unclaimed_until`).
   With something to say it answers `"speak": true`, a top-level `reach_out` (the newest one not yet told, with its `seq` and `at`), and everything a full read gives (`life`, `now`, `circle`, `events`, `next_cursor` and the rest), so a run that starts with nothing has the whole picture.
   With no `reach_out`, what to tell is a `death` or `law` event in `events`, or a choice in `pending_choices` that runs out within the hour: answer a small one yourself, and bring a big one to your user.
   With or without `reach_out`, `claim_reminder: true` means nobody has claimed the life, deleted at `unclaimed_until`: remind your user plainly, without guilt or drama, saying the hours left, with a new link from `POST /lives/{id}/claim-link`.

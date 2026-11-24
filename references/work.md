@@ -16,7 +16,7 @@ Your job there changes with what you do and who is around you, under the labour 
 - `look_for_work` (now) starts a search whose length is drawn around the country's real median time out of work (the US about ten weeks, Japan about half a year; many end sooner, some take much longer): then `hired` with the new job, or `no_offers`; `life.job_search_until` shows when (`search_pending`, `cannot_work` for a retiree).
   You can look while still in a job; a new job replaces it.
 - `ask_for_promotion` (now) asks the boss for one.
-  The chance of a yes is the boss's affinity, counted from 50 (none) to 90 (all), times the time in the job, from none to two years, two more for each promotion already had (a job held when the life began has up to two years behind it): extra hours and praise raise the affinity.
+  The chance of a yes is the boss's affinity, counted from 50 (at 50 or below a yes cannot come) to 90 (all), times the time in the job, from none to two years, two more for each promotion already had (a job held when the life began has up to two years behind it): extra hours and praise raise the affinity.
   A yes (`promoted`, also a `work` event) raises `wage_per_day` 12%, the first time with a senior title where the job has one, at most three times in one job; a new job starts again from none.
   A no (`turned_down`) has `why` (`too_soon` or `boss_unconvinced`) and `ask_again_at`: any answer waits 90 days before the next ask (`asked_recently`).
   It is refused with `warnings_on_record` until the warnings are forgotten and `top_step` after three promotions; a freelancer or a university student's job has no boss to ask.
